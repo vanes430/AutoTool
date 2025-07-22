@@ -1,8 +1,8 @@
 name: AutoTool
 version: '${project.version}'
-main: me.usainsrht.autotool.AutoTool
+main: com.github.vanes430.autotool.AutoTool
 api-version: '1.13'
-author: UsainSrht
+author: vanes430
 description: Automatically change your item to what's best in your hotbar when breaking blocks.
 commands:
   autotool:
