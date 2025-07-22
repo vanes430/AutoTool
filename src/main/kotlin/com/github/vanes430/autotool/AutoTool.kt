@@ -45,8 +45,16 @@ class AutoTool : JavaPlugin() {
     }
 
     private fun setupNMS() {
+        // --- PERBAIKAN DIMULAI DI SINI ---
+        // Logika ini diperbaiki agar sama dengan versi Java yang sudah benar
         nmsVersion = server.javaClass.getPackage().name.substringAfterLast('.')
-        craftBukkitPackageName = "org.bukkit.craftbukkit.$nmsVersion"
+
+        craftBukkitPackageName = if (nmsVersion == "craftbukkit") {
+            "org.bukkit.craftbukkit"
+        } else {
+            "org.bukkit.craftbukkit.$nmsVersion"
+        }
+        // --- PERBAIKAN SELESAI ---
 
         // Setup reflection methods
         setNMSBlockMethod()
@@ -130,7 +138,7 @@ class AutoTool : JavaPlugin() {
             1.0f // Default speed on error
         }
     }
-    
+
     private fun getSuperClass(clazz: Class<*>): Class<*> {
         var superClass = clazz
         while (superClass.superclass != null && superClass.superclass != Object::class.java) {
