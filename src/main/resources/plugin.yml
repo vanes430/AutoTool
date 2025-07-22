@@ -1,12 +1,9 @@
 name: AutoTool
 version: ${version}
 main: com.github.vanes430.autotool.AutoTool
+website: https://github.com/vanes430/AutoTool
 
-# --- PERUBAHAN DI SINI ---
-# Ubah dari 1.8 menjadi 1.13 atau lebih tinggi.
-# Ini akan menonaktifkan remapping dari PaperMC yang menyebabkan error.
 api-version: 1.13
-# -------------------------
 
 author: vanes430
 
