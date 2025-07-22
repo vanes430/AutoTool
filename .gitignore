@@ -30,8 +30,3 @@ logs/
 .DS_Store
 # Windows
 Thumbs.db
-
-# Final build artifacts
-# Praktik terbaik adalah tidak menyimpan file JAR hasil build ke dalam Git.
-# Bangun dari source code jika diperlukan. Hapus baris di bawah jika Anda tetap ingin menyimpannya.
-*.jar
