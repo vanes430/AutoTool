@@ -45,8 +45,6 @@ class AutoTool : JavaPlugin() {
     }
 
     private fun setupNMS() {
-        // --- PERBAIKAN DIMULAI DI SINI ---
-        // Logika ini diperbaiki agar sama dengan versi Java yang sudah benar
         nmsVersion = server.javaClass.getPackage().name.substringAfterLast('.')
 
         craftBukkitPackageName = if (nmsVersion == "craftbukkit") {
@@ -54,9 +52,7 @@ class AutoTool : JavaPlugin() {
         } else {
             "org.bukkit.craftbukkit.$nmsVersion"
         }
-        // --- PERBAIKAN SELESAI ---
 
-        // Setup reflection methods
         setNMSBlockMethod()
         setAsNMSCopyMethod()
         val nmsItemStack = setGetItemMethod()
@@ -135,7 +131,7 @@ class AutoTool : JavaPlugin() {
             val nmsItem = getItemMethod.invoke(nmsItemStack)
             getDestroySpeedMethod.invoke(nmsItem, nmsItemStack, nmsBlockData) as Float
         } catch (e: Exception) {
-            1.0f // Default speed on error
+            1.0f
         }
     }
 

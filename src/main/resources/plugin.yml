@@ -1,11 +1,25 @@
 name: AutoTool
-version: '${project.version}'
+version: ${version}
 main: com.github.vanes430.autotool.AutoTool
-api-version: '1.13'
+
+# --- PERUBAHAN DI SINI ---
+# Ubah dari 1.8 menjadi 1.13 atau lebih tinggi.
+# Ini akan menonaktifkan remapping dari PaperMC yang menyebabkan error.
+api-version: 1.13
+# -------------------------
+
 author: vanes430
-description: Automatically change your item to what's best in your hotbar when breaking blocks.
+
 commands:
   autotool:
-    description: Toggle autotool.
-    usage: /autotool
-    permission: autotool.toggle
+    description: Toggles AutoTool feature or reloads the configuration.
+    usage: /<command> [reload]
+    permission: autotool.use
+
+permissions:
+  autotool.use:
+    description: Allows using the /autotool command to toggle the feature.
+    default: true
+  autotool.reload:
+    description: Allows using /autotool reload.
+    default: op

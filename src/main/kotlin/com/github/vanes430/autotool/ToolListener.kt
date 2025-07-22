@@ -16,7 +16,6 @@ class ToolListener(private val plugin: AutoTool) : Listener {
         val player = event.player
         if (!plugin.isAutoToolOn(player)) return
 
-        // Dapatkan blok yang ditarget oleh pemain
         val targetBlock = player.getTargetBlock(null as? Set<Material>, 5) ?: return
 
         if (targetBlock.type == Material.AIR) return
